@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "5f9750ae-6018-4f11-a67c-b1f27b4af4b6",
+		"name": "Licoreria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "37975331"
+	},
+	"item": [
+		{
+			"name": "postproducto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigoProducto\" : 2,\r\n    \"nombre\" : \"CocaCola\",\r\n    \"marca\" : \"coca\",\r\n    \"costo\" : 100,\r\n    \"cantidadDisponible\": 10\r\n\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/producto/crear"
+			},
+			"response": []
+		},
+		{
+			"name": "traerbajostock",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/producto/traerbajostock"
+			},
+			"response": []
+		},
+		{
+			"name": "postclientes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"IdCliente\" : 1,\r\n    \"nombre\" : \"Julian\",\r\n    \"apellido\" : \"Gonzalez\",\r\n    \"dni\" : 44142929\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/cliente/crear"
+			},
+			"response": []
+		},
+		{
+			"name": "venta",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "/*{\r\n    \"codigoVenta\": 1,\r\n    \"fechaVenta\": \"2024-09-06\",\r\n    \"total\": 0.0,\r\n    \"listaProductos\": [\r\n        {\r\n            \"codigoProducto\": 1\r\n        },\r\n        {\r\n            \"codigoProducto\": 2\r\n        }\r\n    ],\r\n    \"unCliente\": {\r\n        \"idCliente\" : 1,\r\n        \"nombre\" : \"Julian\",\r\n        \"apellido\" : \"Gonzalez\",\r\n        \"dni\" : 44142929\r\n    }\r\n}*/\r\n\r\n\r\n\r\n{\r\n    \"codigoVenta\": 2,\r\n    \"fechaVenta\": \"2024-09-06\",\r\n    \"total\": 0.0,\r\n    \"listaProductos\": [\r\n        {\r\n            \"codigoProducto\": 1\r\n        }\r\n    ],\r\n    \"unCliente\": {\r\n        \"idCliente\" : 1,\r\n        \"nombre\" : \"Julian\",\r\n        \"apellido\" : \"Gonzalez\",\r\n        \"dni\" : 44142929\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/venta/crear"
+			},
+			"response": []
+		},
+		{
+			"name": "productoPorVenta",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/venta/productos/2"
+			},
+			"response": []
+		},
+		{
+			"name": "ventasPorDia",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/venta/dia/2024-09-06"
+			},
+			"response": []
+		},
+		{
+			"name": "ventaMasCara",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
